@@ -63,3 +63,7 @@
    display: inline-block;
    vertical-align: top;
 }
+.hardwarecontainer > * {
+    display: inline-block;
+    border-radius: 50px
+}
