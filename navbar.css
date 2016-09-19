@@ -50,7 +50,13 @@
     border: 5px solid lightblue;
     -webkit-border-radius: 50px;
 }
-
+#howto{
+    font-family: "Comic Sans MS";
+   font-size: x-large;
+   text-indent: 70px;
+    border: 5px solid lightblue;
+    -webkit-border-radius: 50px;
+}
 .container > * {
    display: inline-block;
    vertical-align: top;
