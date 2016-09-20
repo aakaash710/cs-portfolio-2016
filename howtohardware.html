@@ -15,44 +15,104 @@
         <li><a href="#">Vindinium</a> </li>
         <li><a href="#">Big Project</a> </li>
     </ul>
-<h1 id=heading>Step by Step process to make hardware page</h1>
+    <h1 id=heading>How to link HTML to css</h1>
+    <p id=howto>
+        To link HTML to css you have to create a href and inside the href you have to put in the nameof your css file.
+    </p>
+    <code>
+        <pre>
+           &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;How To make Hardware Page&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;navbar.css&quot; type=&quot;text/css&quot; /&gt;
+&lt;/head&gt; 
+        </pre>
+    </code>
+    <h1 id=heading>How to create a navbar</h1>
+    <p id=howto>
+        To create a navbar, First you have to create an unordered list with an id. 
+        Next, make links for each of the pages. Finally write the name of each of the pages.
+    </p>
+<code>
+    <pre>
+         &lt;ul id=&quot;navbar&quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;index.html&quot;&gt;About Aakaash&lt;/a&gt; &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;hardware.html&quot;&gt;Hardware&lt;/a&gt; &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;howtohardware.html&quot;&gt;How to make hardware page&lt;/a&gt; &lt;/li&gt;
+         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Calculator&lt;/a&gt; &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Todo List&lt;/a&gt; &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Vindinium&lt;/a&gt; &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Big Project&lt;/a&gt; &lt;/li&gt;
+    &lt;/ul&gt;
+    </pre>
+</code>
+<h1 id=heading>Aakaash Narayannan - Step by Step Process to make hardware page</h1>
 <p id=howto>
-    Step 1: Do research on the history of a motherboard
+    Step 1: link list to hardware page name. You do that by putting the name of your hardware page in the href.
+</p>
+<code>
+    <pre>
+       &lt;li&gt;&lt;a href=&quot;hardware.html&quot;&gt;Hardware&lt;/a&gt; &lt;/li&gt;  
+    </pre>
+</code>
+<p id=howto>
+    Step 2: Research history of motherboard and put it in your hardware page.
+<br>
+The Motherboard is the main Circuit Board found in microcomputers and other systems. It allows communication between many of the electronic components of a system. A motherboard usually contains significant sub-systems such as the central processor, input/output
+ and memory controllers, interface connectors and other components integrated for general use. The motherboard is often referred to as the mother of all components as the name suggests. The CPU, memory and peripherals were housed on individual
+circuit boards which were plugged into the backplate.Laptop and notebook computers that were developed in the 1990s integrated the most common peripherals. This included motherboards with no upgradeable components, a trend that would continue
+as smaller systems that were introduced after the turn of the century. Modern motherboards include Sockets, a chipset, Non voltaile memory chips, A clock generator, Slots for expansion cards and Power Connectors. The sockets are where mictoprocessors
+are installed. The CPU is directly soldered to the motherboard. A chipset forms an interface between the CPU's front side bus, main memory and peripheral base. The Non Voltaire Memory Chips contain the systems firmware or BIOS. A clock generator
+produces the system clock signal to synchronize the various components. The Slots for expansion cards are the interface to the system via the buses supported by the chipset.
+</p>
+<p id=howto>
+    Step 3: get picture of motherboard and put inside the hardware page.
+</p>
+<img src="images/mobo.jpg" style="width: 1272px;"/>
+<code>
+    <pre>
+            &lt;img src=&quot;images/mobo.jpg&quot; style=&quot;width:1272px&quot;;/&gt;
+    </pre>
+</code>
+<p id=howto>
+    Step 4: research Types of RAM and put that research inside the hardware page.
     <br>
-    History of a Motherboard: The Motherboard is the main Circuit Board found in microcomputers and other systems. 
-    It allows communication between many of the electronic components of a system.
-    A motherboard usually contains significant sub-systems such as the central processor, input/output and memory controllers, interface connectors and other components integrated for general use. 
-    The motherboard is often referred to as the mother of all components as the name suggests. 
-    The CPU, memory and peripherals were housed on individual circuit boards which were plugged into the backplate.
-    Laptop and notebook computers that were developed in the 1990s integrated the most common peripherals.
-    This included motherboards with no upgradeable components, a trend that would continue as smaller systems that were introduced after the turn of the century.
+             Two Widely used forms of modern RAMS are Static RAM(SRAM) and Dynamic RAM(DRAM). 
+        In SRAM, a bit of data is stored using the state of a six transistor memory cell. 
+        A bit is the smallest unit of data in a computer. A bit has a single binary value, either 0 or 1.
+        A six transistor memory cell is a type of semiconductor memory that use bistable latching circuitry to store each bit.
+        This form is more expensive, but is faster and requires less dynamic power than DRAM. 
+        DRAM stores a bit of data using a transistor and capacitor pair, which together comprise a DRAM memory cell. 
+        A capacitor is an electronic component used for storing charge and energy. 
+        The usual capacitor is a pair of parallel plates seperated by a small distance. 
 </p>
 <p id=howto>
-    Step 2: get a picture of a motherboard that shows all the parts of it
-</p>
-<img src="images/mobo.jpg" style="width:1272px;"/>
-<p id=howto>
-    Step 3: Do research on Types of RAM
-    <br>
-    Two Widely used forms of modern RAMS are Static RAM(SRAM) and Dynamic RAM(DRAM). 
-    In SRAM, a bit of data is stored using the state of a six transistor memory cell.
-    This form is more expensive, but is faster and requires less dynamic power than DRAM.
-    DRAM stores a bit of data using a transistor and capacitor pair, which together comprise a DRAM memory cell.
-</p>
-<p id=howto>
-    Step 4: Get pictures of each of the different types of RAM: SRAM and DRAM
+    Step 5: Get pictures of both types of RAM
 </p>
 <img src="images/SRAM.jpg"/><img src="images/DRAM.jpg"/>
+<code>
+    <pre>
+        &lt;img src=&quot;images/SRAM.jpg&quot; style=&quot;width:500px;&quot;/&gt;
+         &lt;img src=&quot;images/DRAM.jpg&quot; style=&quot;width:500px;&quot;/&gt;
+    </pre>
+</code>
 <p id=howto>
-    Step 5: Research specifics of how the Hard Drive works
+    Step 6: Get information about parts of the Hard Drive.
     <br>
-    The hard drive is an incredibly efficient computer memory device that uses simple magnetism to store vast amounts of informations.
-    In your laptop there's just a large shiny circular plate of magnetic material called a platter. 
-    In a hard drive you can find a read-write arm, an Actuator that moves the read-write arm, a Central Spindle, a Magnetic Platter, Plug connections that link the hard drive to circuit board in personal computer, A small spindle that allow read-write arm to swing across platter.
+    The hard drive is an incredibly efficient computer memory device that uses simple magnetism to store vast amounts of informations. In your laptop there's just a large shiny circular plate of magnetic material called a platter. In a hard drive you can
+    find a read-write head, an Actuator that moves the read-write arm, a Central Spindle, a Magnetic Platter, Plug connections that link the hard drive to circuit board in personal computer, and a small spindle that allow read-write arm to swing across
+    platter. A read-write head is a specific physical part of a hard disk that is responsible for reading data from, and writing dato to, the disk. They are usually made up of a thin horizontal magnetic blade attached to an actuator arm.
+    A spindle is a shaft that holds a rotating hard disk drive platters in place. A platter is the circular disk on which magnetic data is stored in a hard disk drive.    
 </p>
 <p id=howto>
-    Step 6: Find a picture of a Hard Drive that shows all the parts of it
+    Step 7: get picture of a Hard Drive
 </p>
-<img src="images/HardDrive.png"/>
+<img src="images/HardDrive.png" style="width: 1200px;"/>
+<code>
+    <pre>
+            &lt;img src=&quot;images/HardDrive.png&quot; style=&quot;width: 1200px;&quot;/&gt;
+    </pre>
+</code>
 </body>
+
 </html>
