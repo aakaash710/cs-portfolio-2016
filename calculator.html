@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="navbar.css" type="text/css" />
+    <title>Calculator</title>
+</head>
+<style>
+    input[type=number] {
+        background-color: 	#00FFFF;
+    }
+
+    input[type=button] {
+        background-color: 	#00FFFF;
+    }
+
+    select {
+        background-color: 	#00FFFF;
+    }
+</style>
+
+<body id="body">
+
+
+    <ul id="navbar">
+        <li><a href="index.html">About Aakaash</a> </li>
+        <li><a href="hardware.html">Hardware</a> </li>
+        <li><a href="howtohardware.html">How to </a> </li>
+        <li><a href="calculator.html">Calculator</a> </li>
+        <li><a href="todo.html">Todo List</a> </li>
+        <li><a href="#">Vindinium</a> </li>
+        <li><a href="#">Big Project</a> </li>
+    </ul>
+    <h1 id = heading>Calculator</h1>
+<body id = "body">
+    <!-- make the user enter a number in the first box -->
+  <input class = "calc" id="number1" type="number" placeholder="type 1st number" name="quantity">
+  <!-- make the dropdown that shows all the operations -->
+  <select class = "calc" id="operators">
+      <option value="0" style = "background: gray">Choose operation</option>
+      <option value="1" >+(plus)</option>
+      <option value="2" >-(minus</option>
+      <option value="3">*(multpily)</option>
+      <option value="4" >/(divide)</option>
+      <option value="5" >^(to the power of)</option>
+      <option value="6" >%(remainder)</option>
+  </select>
+    <!-- make the user enter a number in the second box -->
+    <input class = "calc" id="number2" type="number" placeholder="type 2nd number" name="quantity">
+    <!-- make the button show up -->
+    <input class = "calc"  id="btn" type="button" value="Solve">
+
+
+<!-- makes answer show up when button is clicked -->
+<div style="font-size: 100px" id="answer"  class = "answer"> </div>
+
+
+
+<!-- links HTML to javascript -->
+    <script type="text/javascript" src="calculator.js"></script>
+</body>
+</html>
