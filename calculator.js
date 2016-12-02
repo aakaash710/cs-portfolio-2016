@@ -12,10 +12,10 @@ var answer = document.getElementById("answer")
      var num2 = number2.value;
      var operations = operators.value;
 
-
-     if (operations === "1"){
-         /*checks to see if add operator is clicked and if yes then makes it so the add 
+ /*checks to see if add operator is clicked and if yes then makes it so the add 
          operator works and adds number1 + number2 */
+     if (operations === "1"){
+        
        answer.innerHTML = parseInt(num1) + parseInt(num2);
     }
 

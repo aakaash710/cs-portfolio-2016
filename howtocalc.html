@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="navbar.css" type="text/css" />
+    <title>AboutAakaash</title>
+</head>
+
+<body id="body">
+
+
+    <ul id="navbar">
+        <li><a href="index.html">About Aakaash</a> </li>
+        <li><a href="hardware.html">Hardware</a> </li>
+        <li><a href="howtohardware.html">How to: Hardware</a> </li>
+        <li><a href="calculator.html">Calculator</a> </li>
+        <li><a href="howtocalc.html">How to: Calculator</a> </li>
+        <li><a href="todo.html">Todo List</a> </li>
+        <li><a href="#">Vindinium</a> </li>
+        <li><a href="#">Big Project</a> </li>
+    </ul>
+
+    <h1 id=heading>How to create the Calculator page</h1>
+    <br>
+    <h2 id=heading>How to link HTML to css</h2>
+    <p id=howto>
+        To link HTML to css you have to create a href and inside the href you have to put in the name of your css file.
+    </p>
+    <code>
+        <pre>
+           &lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;navbar.css&quot; type=&quot;text/css&quot; /&gt;
+    &lt;title&gt;Calculator&lt;/title&gt;
+&lt;/head&gt;
+        </pre>
+    </code>
+    <h2 id=heading>How to create a navbar</h2>
+    <p id=howto>
+        To create a navbar, First you have to create an unordered list with an id.
+        Next, make links for each of the pages. Finally write the name of each of the pages.
+    </p>
+<code>
+    <pre>
+         &lt;ul id=&quot;navbar&quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;index.html&quot;&gt;About Aakaash&lt;/a&gt; &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;hardware.html&quot;&gt;Hardware&lt;/a&gt; &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;howtohardware.html&quot;&gt;How to: Hardware&lt;/a&gt; &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;calculator.html&quot;&gt;Calculator&lt;/a&gt; &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;howtocalc.html&quot;&gt;How to: Calculator&lt;/a&gt; &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;todo.html&quot;&gt;Todo List&lt;/a&gt; &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Vindinium&lt;/a&gt; &lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Big Project&lt;/a&gt; &lt;/li&gt;
+    &lt;/ul&gt;
+    </pre>
+</code>
+
+    <h4 id=heading>Aakaash Narayannan - Step by Step Process to make Calculator page</h4>
+
+<p id = howto>
+  Step 1: link calculator to navbar
+</p>
+
+<code>
+    <pre>
+         &lt;li&gt;&lt;a href=&quot;calculator.html&quot;&gt;Calculator&lt;/a&gt; &lt;/li&gt;
+    </pre>
+</code>
+
+<p id = howto>
+    Step 2: create two inputs of type number to create boxes for the user to type the numbers in.
+</p>
+
+<code>
+    <pre>
+         &lt;input class = &quot;calc&quot; id=&quot;number1&quot; type=&quot;number&quot; placeholder=&quot;type 1st number&quot;&gt;
+         &lt;input class = &quot;calc&quot; id=&quot;number2&quot; type=&quot;number&quot; placeholder=&quot;type 2nd number&quot;&gt;
+    </pre>
+</code>
+
+<p id = howto>
+    Step 3: Create a select tag to make a dropdown with all the operations
+</p>
+<code>
+    <pre>
+      &lt;select class = &quot;calc&quot; id=&quot;operators&quot;&gt;
+      &lt;option value=&quot;0&quot; style = &quot;background: gray&quot;&gt;Choose operation&lt;/option&gt;
+      &lt;option value=&quot;1&quot; &gt;+(plus)&lt;/option&gt;
+      &lt;option value=&quot;2&quot; &gt;-(minus&lt;/option&gt;
+      &lt;option value=&quot;3&quot;&gt;*(multpily)&lt;/option&gt;
+      &lt;option value=&quot;4&quot; &gt;/(divide)&lt;/option&gt;
+      &lt;option value=&quot;5&quot; &gt;^(to the power of)&lt;/option&gt;
+      &lt;option value=&quot;6&quot; &gt;%(remainder)&lt;/option&gt;
+      &lt;/select&gt;
+    </pre>
+</code>
+<p id = howto>
+    Step 4: create an input of type button that solves the equation
+</p>
+<code>
+    <pre>
+         &lt;input class = &quot;calc&quot;  id=&quot;btn&quot; type=&quot;button&quot; value=&quot;Solve&quot;&gt;
+    </pre>
+</code>
+    <p id = howto>
+    Step 5: create div that that the answer shows up in
+</p>
+<code>
+    <pre>
+        &lt;div style=&quot;font-size: 100px&quot; id=&quot;answer&quot;  class = &quot;answer&quot;&gt; &lt;/div&gt;
+    </pre>
+</code>
+<p id = howto>
+    Step 6: in your javascript, get the variables from the HTML by using getElementById
+</p>
+<code>
+    <pre>
+var number1 = document.getElementById(&quot;number1&quot;)
+var operators = document.getElementById(&quot;operators&quot;)
+var number2 = document.getElementById(&quot;number2&quot;)
+var btn = document.getElementById(&quot;btn&quot;)
+var answer = document.getElementById(&quot;answer&quot;)
+    </pre>
+</code>
+<p id = howto>
+    Step 7: create an event listener for the solve button
+</p>
+<code>
+    <pre>
+         btn.addEventListener(&quot;click&quot;, function (){
+    </pre>
+</code>
+<p id = howto>
+    Step 8: create a new variable under the button eventListener to get the value of the 2 inputs and the operators
+</p>
+<code>
+    <pre>
+     var num1 = number1.value;
+     var num2 = number2.value;
+     var operations = operators.value;
+    </pre>
+</code>
+<p id = howto>
+    Step 9: create if else statements to check which operator is selected and then solve the equation with the operator selected
+</p>
+<code>
+    <pre>
+        if (operations === &quot;1&quot;){
+
+       answer.innerHTML = parseInt(num1) + parseInt(num2);
+    }
+
+    else if (operations === &quot;2&quot;){
+        answer.innerHTML = parseInt(num1) - parseInt(num2);
+    }
+
+    else if (operations === &quot;3&quot;){
+        answer.innerHTML = parseInt(num1) * parseInt(num2);
+    }
+    else if (operations === &quot;4&quot;){
+        answer.innerHTML = parseInt(num1) / parseInt(num2);
+    }
+
+    else if (operations === &quot;5&quot;){
+        answer.innerHTML = Math.pow(parseInt(num1),parseInt(num2));
+    }
+
+    else if (operations === &quot;6&quot;){
+        answer.innerHTML = parseInt(num1) % parseInt(num2);
+    }
+    </pre>
+</code>
+</body>
+</html>

@@ -61,6 +61,10 @@
 #answer{
    color: green
 }
+
+.todo{
+   font-size: 35px;
+}
 .calc{
     font-size: 35px;
 }
