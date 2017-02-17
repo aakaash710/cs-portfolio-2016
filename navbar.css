@@ -54,6 +54,7 @@
     font-family: "Comic Sans MS";
    font-size: x-large;
    text-indent: 70px;
+   color: red;
     border: 5px solid lightblue;
     -webkit-border-radius: 50px;
 }
