@@ -48,23 +48,23 @@ Bot.prototype.botBrain = function() {
         var myDir;
         // detects what your current position on the map is.
         var myPos = [bot.yourBot.pos.x, bot.yourBot.pos.y];
-        
+
         // determines what bot# your bot is.
         var enemyBots = [];
         if (bot.yourBot.id != 1) enemyBots.push(bot.bot1);
         if (bot.yourBot.id != 2) enemyBots.push(bot.bot2);
         if (bot.yourBot.id != 3) enemyBots.push(bot.bot3);
         if (bot.yourBot.id != 4) enemyBots.push(bot.bot4);
-        
+
         // determines what mines the enemy bots have and collects the enemy mines.
         var enemyMines = [];
         enemyMines = enemyBots[0].mines;
         enemyMines = enemyMines.concat(enemyBots[1].mines);
         enemyMines = enemyMines.concat(enemyBots[2].mines);
-        
+
         // this variable links the free mines and the nemy mines and tells you to collect both enemy and free mines.
         var minesToClaim = bot.freeMines.concat(enemyMines);
-    
+
         // this variable determines which bot has the most mines and if it is not, it attacks the bot with the most mines.
         var richestBot = enemyBots[0];
         for (var i = 0; i < enemyBots.length; i++) {
@@ -77,21 +77,21 @@ Bot.prototype.botBrain = function() {
          * This Code Decides WHAT to do         *
          *                                      */
         var task;
-   // checks if your bot's life is less than 30, then it will go to a tavern. 
+   // checks if your bot's life is less than 30, then it will go to a tavern.
         if (bot.yourBot.life < 30) {
 
             task = "taverns";
-           
+
         }
  // if life is not less than 30 and your bot isn't the richest bot, then your bot will attack the bot with the most mines.
         else if (richestBot.mineCount > bot.yourBot.mineCount)
             task = "Attack Richest"
-    
+
 // if none of the above two are true then my bot will colect mines
         else {
             task = "minestoclaim";
         }
-  
+
 
 
 
@@ -102,7 +102,7 @@ Bot.prototype.botBrain = function() {
          *                                      */
 
         // This Code find the nearest Mine and sets myDir toward that direction //
-        
+
         // if task = "minestoclaim", my bot finds the closest mines and determines which mines you need to claim.
         if (task === "minestoclaim") {
             var closestMine = minesToClaim[0];
@@ -126,7 +126,7 @@ Bot.prototype.botBrain = function() {
             console.log("Claiming a Tavern!");
             myDir = bot.findPath(myPos, closestTavern);
         }
-        
+
         // if task = "Attack Richest", my bot attacks the bot with the most mines.
         if (task === "Attack Richest") {
             console.log("Attacking Bot with most Mines")
@@ -169,23 +169,23 @@ bot.runGame();
         var myDir;
         // detects what your current position on the map is.
         var myPos = [bot.yourBot.pos.x, bot.yourBot.pos.y];
-        
+
         // determines what bot# your bot is.
         var enemyBots = [];
         if (bot.yourBot.id != 1) enemyBots.push(bot.bot1);
         if (bot.yourBot.id != 2) enemyBots.push(bot.bot2);
         if (bot.yourBot.id != 3) enemyBots.push(bot.bot3);
         if (bot.yourBot.id != 4) enemyBots.push(bot.bot4);
-        
+
         // determines what mines the enemy bots have and collects the enemy mines.
         var enemyMines = [];
         enemyMines = enemyBots[0].mines;
         enemyMines = enemyMines.concat(enemyBots[1].mines);
         enemyMines = enemyMines.concat(enemyBots[2].mines);
-        
+
         // this variable links the free mines and the nemy mines and tells you to collect both enemy and free mines.
         var minesToClaim = bot.freeMines.concat(enemyMines);
-    
+
         // this variable determines which bot has the most mines and if it is not, it attacks the bot with the most mines.
         var richestBot = enemyBots[0];
         for (var i = 0; i &lt; enemyBots.length; i++) {
@@ -210,16 +210,16 @@ bot.runGame();
          * This Code Decides WHAT to do         *
          *                                      */
         var task;
-   // checks if your bot's life is less than 30, then it will go to a tavern. 
+   // checks if your bot's life is less than 30, then it will go to a tavern.
         if (bot.yourBot.life &lt; 30) {
 
             task = &quot;taverns&quot;;
-           
+
         }
  // if life is not less than 30 and your bot isn't the richest bot, then your bot will attack the bot with the most mines.
         else if (richestBot.mineCount &gt; bot.yourBot.mineCount)
             task = &quot;Attack Richest&quot;
-    
+
 // if none of the above two are true then my bot will colect mines
         else {
             task = &quot;minestoclaim&quot;;
@@ -239,7 +239,7 @@ Finally, if my bot has the most mines and my health is above 30, then my bot col
          *                                      */
 
         // This Code find the nearest Mine and sets myDir toward that direction //
-        
+
         // if task = &quot;minestoclaim&quot;, my bot finds the closest mines and determines which mines you need to claim.
         if (task === &quot;minestoclaim&quot;) {
             var closestMine = minesToClaim[0];
@@ -263,7 +263,7 @@ Finally, if my bot has the most mines and my health is above 30, then my bot col
             console.log(&quot;Claiming a Tavern!&quot;);
             myDir = bot.findPath(myPos, closestTavern);
         }
-        
+
         // if task = &quot;Attack Richest&quot;, my bot attacks the bot with the most mines.
         if (task === &quot;Attack Richest&quot;) {
             console.log(&quot;Attacking Bot with most Mines&quot;)
@@ -280,7 +280,7 @@ Finally, if my bot has the most mines and my health is above 30, then my bot col
     If task = "minestoclaim", then your bot will collect any mine.
 </p>
 <h2 id="heading">What I Learned About AI</h1>
-<p>
+<p id="howto">
     My bot did what I wanted it to. It could collect mines, it could attack other bots and it could go to taverns, all of which I wanted it to do.
     Building this bot wasn't as complicated as I thought it was going to be, but it wasn't that simple either, it was in between.
     I didn't have a clear understanding of AI before creating this bot, but after creating this bot I formed a clear understanding of how AI works and what it is.
