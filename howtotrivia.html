@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8">
+    <title>How to create a trivia game</title>
+    <link rel="stylesheet" href="navbar.css" type="text/css" />
+  </head>
+  
+  <body id="body">
+    <ul id="navbar">
+      <li><a href="index.html">About Aakaash</a> </li>
+      <li><a href="hardware.html">Hardware</a> </li>
+      <li><a href="howtohardware.html">How to: Hardware</a> </li>
+      <li><a href="calculator.html">Calculator</a> </li>
+      <li><a href="howtocalc.html">How to: Calculator</a> </li>
+      <li><a href="todo.html">Todo List</a> </li>
+      <li><a href="Vindinium.html">Vindinium</a> </li>
+      <li><a href="trivia.html">Big Project</a> </li>
+      <li><a href="howtotrivia.html">How to: Trivia</a> </li>
+    </ul>
+    <h1 id="heading">How to Create a Quiz</h1>
+    <p id="howto">
+      I have decided to create a trivia quiz because I thought that the skill of making a quiz in HTML and javascript would be helpful later in my life. For example I could make a signup form on a social media website that uses similar concepts. To create this
+      quiz, I came up with 21 random questions and programmed it on javascript to check whether the answers were correct and come up with a score for the user. I am going to describe how I made the quiz and why I made the quiz this way.
+    </p>
+    <h2 id="heading">Objective 1: How to Determine Correct Answer</h2>
+    <h3 id="heading">Step 1: Create a Submit Button</h3>
+    <code>
+      <pre>
+          &lt;input id=&quot;Submit&quot; class=&quot;answers&quot; type=&quot;button&quot; value=&quot;Submit Answers&quot;&gt;
+      </pre>
+    </code>
+    <p id="howto">
+      To create a Submit button, give the button an id so that you can use it in the Javascript. The type has to be "button" and the value attribute will be the text shown on the button. This doesn't make the button work yet, we have to do that in Javascript.
+    </p>
+    <h3 id="heading">Step 2: Get references to the elements that you created in the HTML</h3>
+    <code>
+      <pre>
+          var btn = document.getElementById(&quot;Submit&quot;);
+          var scoring = document.getElementById(&quot;score&quot;);
+      </pre>
+    </code>
+    <p id="howto">
+      Use getElementById to manipulate HTML elements in Javascript. getElementById searches for an element with the specified ID, and returns a reference to it.
+    </p>
+    <h3 id="heading">Step 3: Make Submit button work and store all the radio buttons that are checked</h3>
+    <code>
+      <pre>
+        btn.addEventListener(&quot;click&quot;, function() {
+            var radios = document.querySelectorAll('input[type=&quot;radio&quot;]:checked');
+      </pre>
+    </code>
+    <p id="howto">
+      To make the submit button work, add an event listener that fires when the button is clicked. In the event listener, add a variable that stores references to the clicked radio buttons in an array.
+    </p>
+    <h3 id="heading">Step 4: Highlight the questions with an appropriate color, depending on the answers</h3>
+    <code>
+      <pre>
+         for (var i = 0; i < radios.length; i++) {
+    
+              radios[i].parentNode.className += " quiz-complete";
+    
+                if (radios[i].value == "1") {
+                    radios[i].parentNode.style.backgroundColor = "lightgreen";
+                    score++;
+                }
+                else {
+                    radios[i].parentNode.style.backgroundColor = "red";
+                }
+            }
+            scoring.innerHTML = score + " /21 ";
+        });
+    
+      </pre>
+    </code>
+    <p id="howto">
+      Use the variable we created above to check if the answer is correct. We made the value attribute 1 if the answer was correct and the value attribute 0 if the answer was incorrect. If the value attribute is 1, highlight the question green (correct) and
+      if it wasn't, highlight the question red (incorrect). First, I tried to not make the value attribute 1 and instead made the value attribute the text that shows on the screen. 
+      That doesn't work because if we did that, it would be harder for me to program the quiz to highlight the question the appropriate color after the Submit button is clicked.
+      We created a for loop because this loop checks what radios.length is, which in this case is 21 and runs the code under it for all the questions.
+      score++ adds 1 to the score every time we get a question correct.
+    </p>
+    <h2 id="heading">Objective 2: How to Display the Score</h2>
+    <h3 id="heading">Step 1: Link to Javascript in HTML</h3>
+    <code>
+      <pre>
+        &lt;script type=&quot;text/javascript&quot; src=&quot;trivia.js&quot;&gt;&lt;/script&gt;
+      </pre>
+    </code>
+    <p id="howto">
+      To link to Javascript in HTML, the type has to be “text/javascript” and the src is the name of your Javascript file. This will execute that file's code on this page.
+    </p>
+    <h3 id="heading">Step 2: Create div to display the score</h3>
+    <code>
+      <pre>
+        &lt;div style=&quot;background-color: orange&quot; class=&quot;trivia&quot; id=&quot;score&quot;&gt;&lt;/div&gt;
+      </pre>
+    </code>
+    <p id="howto">
+      The div element is a generic "division" element with few default styles. To create this div, give the div an id so that you can use it in the javascript and then give the div a background color. Later, we'll use Javascript to put the score in this div.
+    </p>
+    <h3 id="heading">Step 3: Make score show on the bottom</h3>
+    <code>
+      <pre>
+        scoring.innerHTML = score + &quot; /21 &quot;;
+      </pre>
+    </code>
+    <p id="howto">
+      We have to use the innerHTML property because we created a div to show the score in the HTML file. We created a score variable before that checks how many questions we got correct. Put that number over 21 for the final score.
+    </p>
+    <h2 id="heading">Objective 3: How to show correct answer after Submit button is clicked</h2>
+    <h3 id="heading">Step 1: Link to CSS in HTML</h3>
+    <code>
+      <pre>
+         &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot; type=&quot;text/css&quot;/&gt;
+      </pre>
+    </code>
+    <p id="howto">
+      To link to CSS, the type has to be “text/css” and the href or src has to be the name of your CSS file.
+    </p>
+    <h3 id="heading">Step 2: Put all of the correct answers into a span tag with class "correct" </h3>
+    <code>
+      <pre>
+        &lt;input type=&quot;radio&quot; name=&quot;answer1&quot; class=&quot;correct&quot; value=&quot;1&quot;&gt;&lt;span class=&quot;correct&quot;&gt;Nothing&lt;/span&gt;
+      </pre>
+    </code>
+    <p id="howto">
+      We need to create a span tag so that the text itself will be its own element. Give the span tag a class because we need to style it in CSS.
+    </p>
+    <h3 id="heading">Step 3: Add the class quiz-complete to parents of the radio-buttons</h3>
+    <code>
+      <pre>
+        radios[i].parentNode.className += &quot; quiz-complete&quot;;
+      </pre>
+    </code>
+    <p id="howto">
+      Concatinate the class to the end of the className property. Be sure to add a space before the class Do this to apply the styles to the correct answer.
+    </p>
+    <h3 id="heading">Step 4: Use CSS to highlight correct answer after submit button is clicked</h3>
+    <code>
+      <pre>
+      .quiz-complete .correct{
+        background-color: lightgreen;
+      }
+      </pre>
+    </code>
+    <p id="howto">
+      In the CSS we have to highlight the correct answer green after the submit button is clicked. We have to do this so that the user will know what the correct answer is if they got the answer wrong.
+    </p>
+  </body>
+
+</html>
